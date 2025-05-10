@@ -1,0 +1,67 @@
+<style>
+    .search-btn {
+        background-color: #ff4141;
+        color: #fff;
+        border-radius: 25px;
+        padding: 0 1rem 0 1rem;
+    }
+
+    .search-btn:hover {
+        background-color: #ff4141;
+        color: #fff;
+    }
+
+    .search-btn i {
+        display: inline;
+        margin-right: 0.4rem;
+    }
+
+    .search-inp {
+        border-radius: 25px;
+        padding: 0.5rem 3rem 0.5rem 3rem;
+        font-size: 1rem;
+    }
+</style>
+
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top px-3">
+    <div class="container-fluid">
+        <!-- Logo / Brand -->
+        <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass fs-4"></i></a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+            <!-- Left nav -->
+            <div class="navbar-nav">
+                <a class="nav-link text-dark fw-medium" href="/listings">Explore</a>
+            </div>
+
+            <!-- Centered Search -->
+            <div class="navbar-nav ms-auto align-items-center">
+                <form class="d-flex mx-auto" role="search" action="/listings" method="GET"
+                    style="max-width: 400px; width: 100%;">
+                    <input class="form-control me-2 search-inp" name="search" type="search"
+                        placeholder="Search Destination" />
+                    <button class="btn search-btn" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>Search
+                    </button>
+                </form>
+            </div>
+            <!-- Right nav -->
+            <div class="navbar-nav ms-auto align-items-center">
+                <a class="nav-link text-dark fw-medium" href="/listings/new">HomyGo Your Home</a>
+                <% if(!currUser) {%>
+                    <a class="nav-link text-dark fw-bold" href="/signup">Sign up</a>
+                    <a class="nav-link text-dark fw-bold" href="/login">Log in</a>
+                    <% } else { %>
+                        <a class="nav-link text-dark fw-bold" href="/logout">Log out</a>
+                        <% } %>
+            </div>
+        </div>
+    </div>
+</nav>
